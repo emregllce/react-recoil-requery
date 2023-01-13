@@ -1,9 +1,10 @@
 import './App.css';
+import HomeCard from "./HomeCard"
 
 function App() {
   return (
-    <div className="App">
-      <h1>VENUEX</h1>
+    <div>
+      <HomeCard />
     </div>
   );
 }
