@@ -9,7 +9,7 @@ export default function VerticalToggleButtons() {
   const [view, setView] = React.useState("module");
 
 
-  const handleChange = (event, nextView) => {
+  const handleChange = () => {
     view == "module" 
     ?
     setView("list")

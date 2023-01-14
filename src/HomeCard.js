@@ -20,14 +20,14 @@ const StyledBox = styled(Box)({
 
 })
 
-export default function HomeCard() {
+export default function HomeCard({product}) {
   return (
     <Card sx={{ width:280 }}>
       <Box sx={{display:"flex"}}>
         <CardMedia
           sx={{ height: 120, width:200 }}
-          image="./pic/venuexTask.png"
-          title="green iguana"
+          image={product.image}
+          title={product.title}
         />
         <CardActions>
           <AddShoppingCartIcon onClick={()=>handleAddToCart()} style={{cursor:"pointer"}}/>
@@ -35,15 +35,15 @@ export default function HomeCard() {
       </Box>
 
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
+        <Typography gutterBottom variant="h6" component="div">
+        {product.title}
         </Typography>
         <StyledBox>
         <Typography variant="body2" color="text.secondary">
-          Lizards 
+          {product.rating.rate} 
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards 
+        ${product.price} 
         </Typography>
         </StyledBox>
       </CardContent>
