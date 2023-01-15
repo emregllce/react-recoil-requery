@@ -1,3 +1,4 @@
+import * as React from "react";
 import "./App.css";
 import Home from "./Home";
 import Navbar from "./Navbar";
@@ -7,12 +8,16 @@ import { QueryClientProvider, QueryClient } from "react-query";
 const queryClient = new QueryClient()
 
 function App() {
+
+  const [view, setView] = React.useState("module");
+
+
   return (
     <QueryClientProvider client = {queryClient}>
       <div>
         <Navbar />
-        <Navbar2 />
-        <Home />
+        <Navbar2 view={view} setView = {setView} />
+        <Home view={view} />
       </div>
     </QueryClientProvider>
   );
