@@ -6,7 +6,6 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { Toolbar, Typography, styled } from "@mui/material";
 
 export default function VerticalToggleButtons({view, setView}) {
-  // const [view, setView] = React.useState("module");
 
 
   const handleChange = () => {

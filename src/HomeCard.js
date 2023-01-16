@@ -22,10 +22,14 @@ export default function HomeCard({ product }) {
 
   const [addItem, setAddItem] = useRecoilState(addToCart)
 
+  const handleClick = () => {
+    setAddItem(addItem+1)
+  }
+
 
   return (
     <Card sx={{ width: 280, maxWidth: 280 }}>
-      <Box sx={{ position:"relative" }}>
+      <Box sx={{ /*position:"relative"*/ display:"flex", alignItems:"flex-start" }}>
         <CardMedia
           sx={{ height: 140, width: 280 }}
           image={product.image}
@@ -33,8 +37,8 @@ export default function HomeCard({ product }) {
         />
         <CardActions>
           <AddShoppingCartIcon
-            onClick={()=>setAddItem(addItem+1)}
-            sx={{ cursor: "pointer", position:"absolute", right:"0", top:"0" }}
+            onClick={handleClick}
+            sx={{ cursor: "pointer" /*position:"absolute", right:"0", top:"0" */}}
           />
         </CardActions>
       </Box>

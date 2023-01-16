@@ -1,5 +1,4 @@
 import * as React from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
 import {
     AppBar,
     Box,
@@ -14,8 +13,8 @@ export default function ButtonAppBar({view, setView}) {
       <AppBar position="sticky" sx={{background:"white", display:"flex", alignItems:"center"}}>
         <Toolbar sx={{background:"white", width:"90%"}}>
        
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1, color:"black"}}>
-            Products
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"black"}}>
+            PRODUCTS
           </Typography>
           
           <ItemByRow view={view} setView = {setView} />
