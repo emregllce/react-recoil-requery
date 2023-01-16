@@ -21,6 +21,8 @@ const Item = styled(Paper)(({ theme }) => ({
 // };
 
 export default function ResponsiveGrid({ view }) {
+
+
   const [item, setItem] = React.useState(6);
 
   //   const { isLoading, isError, error, data } = useQuery(

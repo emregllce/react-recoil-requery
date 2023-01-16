@@ -10,10 +10,8 @@ import {
   styled,
   Typography,
 } from "@mui/material";
-
-const handleAddToCart = () => {
-  console.log("I am woking");
-};
+import { useRecoilState } from "recoil";
+import { addToCart} from "./state"
 
 const StyledBox = styled(Box)({
   display: "flex",
@@ -21,9 +19,13 @@ const StyledBox = styled(Box)({
 });
 
 export default function HomeCard({ product }) {
+
+  const [addItem, setAddItem] = useRecoilState(addToCart)
+
+
   return (
-    <Card sx={{ width: 280 }}>
-      <Box sx={{ display: "flex" }}>
+    <Card sx={{ width: 280, maxWidth: 280 }}>
+      <Box sx={{ position:"relative" }}>
         <CardMedia
           sx={{ height: 140, width: 280 }}
           image={product.image}
@@ -31,8 +33,8 @@ export default function HomeCard({ product }) {
         />
         <CardActions>
           <AddShoppingCartIcon
-            onClick={() => handleAddToCart()}
-            style={{ cursor: "pointer" }}
+            onClick={()=>setAddItem(addItem+1)}
+            sx={{ cursor: "pointer", position:"absolute", right:"0", top:"0" }}
           />
         </CardActions>
       </Box>

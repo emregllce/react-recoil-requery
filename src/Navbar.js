@@ -14,6 +14,8 @@ import {
 // import Typography from "@mui/material/Typography";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { useRecoilValue } from "recoil";
+import { addToCart} from "./state"
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -59,9 +61,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-
-
 export default function SearchAppBar() {
+
+  const addItem = useRecoilValue(addToCart)
+  // console.log(addItem);
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "30px" }}>
       <AppBar position="sticky" sx={{backgroundColor: "white"}}>
@@ -79,7 +82,7 @@ export default function SearchAppBar() {
             eCommerce
           </Typography>
           <Box sx={{ textAlign: "center", marginBottom:"10px" }}>
-            <Badge badgeContent={4} color="warning" sx={{ marginTop: "20px" }}>
+            <Badge badgeContent={addItem} color="warning" sx={{ marginTop: "20px" }}>
               <ShoppingCartOutlinedIcon
                 sx={{ color: "black", marginBottom: "20px" }}
               />
