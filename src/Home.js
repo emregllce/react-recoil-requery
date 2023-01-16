@@ -16,29 +16,24 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-// const fetchProducts = () => {
-//   return axios.get(`https://fakestoreapi.com/products?limit=5`);
-// };
 
 export default function ResponsiveGrid({ view }) {
-
-
   const [item, setItem] = React.useState(6);
+  
+  const fetchProducts = () => {
+    return axios.get(`https://fakestoreapi.com/products?limit=${item}`);
+  };
 
-  //   const { isLoading, isError, error, data } = useQuery(
-  //     "products", // unique querie key
-  //     fetchProducts
-  //   );
-  const { isLoading, isError, data, refetch} = useQuery(
-    "products",
-    () => {
-      return axios.get(`https://fakestoreapi.com/products?limit=${item}`);
-    },
-    {
-      refetchInterval: 2000,
-    }
-    
+
+    const { isLoading, isError, error, data, refetch } = useQuery(
+      "products", // unique querie key
+      fetchProducts,
+      {
+          refetchInterval: 2000,
+
+      }
     );
+
     
     const handleChange = (event) => {
       setItem(event.target.value);
