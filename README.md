@@ -1,3 +1,5 @@
-# venuex-task
+# Recoil - React requery
 
-project website : https://emregulluce-venuex-task.netlify.app/
+a basic e-commerce app by using 👆🏻 tools 
+
+project website : https://recoil-requery-task.netlify.app/
